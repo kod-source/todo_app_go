@@ -31,5 +31,8 @@ func main() {
 	u.Email = "test2@example.com"
 	u.UpdateUser()
 	u, _ = models.GetUser(u.ID)
+
+	u.DeleteUser()
+	u, _ = models.GetUser(1)
 	fmt.Println(u)
 }
