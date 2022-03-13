@@ -24,15 +24,18 @@ func main() {
 
 	// u.CreateUser()
 
-	u, _ := models.GetUser(1)
-	fmt.Println(u)
+	// u, _ := models.GetUser(2)
+	// fmt.Println(u)
 
-	u.Name = "Test2"
-	u.Email = "test2@example.com"
-	u.UpdateUser()
-	u, _ = models.GetUser(u.ID)
+	// u.Name = "Test2"
+	// u.Email = "test2@example.com"
+	// u.UpdateUser()
+	// u, _ = models.GetUser(u.ID)
 
-	u.DeleteUser()
-	u, _ = models.GetUser(1)
-	fmt.Println(u)
+	// u.DeleteUser()
+	// u, _ = models.GetUser(1)
+	// fmt.Println(u)
+
+	user, _ := models.GetUser(2)
+	user.CreateTodo("First Todo")
 }
