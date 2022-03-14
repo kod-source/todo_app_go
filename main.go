@@ -53,11 +53,14 @@ func main() {
 	// 	fmt.Println(todo)
 	// }
 
-	todo, _ := models.GetTodo(1)
-	fmt.Println(todo)
+	// todo, _ := models.GetTodo(1)
+	// fmt.Println(todo)
 
-	todo.Content = "Update Todo"
-	todo.UpdateTodo()
-	updateTodo, _ := models.GetTodo(todo.ID)
-	fmt.Println(updateTodo)
+	// todo.Content = "Update Todo"
+	// todo.UpdateTodo()
+	// updateTodo, _ := models.GetTodo(todo.ID)
+	// fmt.Println(updateTodo)
+
+	todo, _ := models.GetTodo(4)
+	todo.DeleteTodo()
 }
