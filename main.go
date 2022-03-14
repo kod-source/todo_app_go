@@ -47,9 +47,17 @@ func main() {
 	// 	fmt.Println(todo)
 	// }
 
-	user, _ := models.GetUser(2)
-	todos, _ := user.GetTodosByUser()
-	for _, todo := range todos {
-		fmt.Println(todo)
-	}
+	// user, _ := models.GetUser(2)
+	// todos, _ := user.GetTodosByUser()
+	// for _, todo := range todos {
+	// 	fmt.Println(todo)
+	// }
+
+	todo, _ := models.GetTodo(1)
+	fmt.Println(todo)
+
+	todo.Content = "Update Todo"
+	todo.UpdateTodo()
+	updateTodo, _ := models.GetTodo(todo.ID)
+	fmt.Println(updateTodo)
 }
