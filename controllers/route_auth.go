@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"todo_app/app/models"
@@ -8,7 +9,12 @@ import (
 
 func signup(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		generateHTML(w, nil, "layout", "public_navbar", "signup")
+		_, err := session(w, r)
+		if err != nil {
+			generateHTML(w, nil, "layout", "public_navbar", "signup")
+		} else {
+			http.Redirect(w, r, "/todos", 302)
+		}
 	} else if r.Method == "POST" {
 		err := r.ParseForm()
 		if err != nil {
@@ -28,7 +34,12 @@ func signup(w http.ResponseWriter, r *http.Request) {
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
-	generateHTML(w, nil, "layout", "public_navbar", "login")
+	_, err := session(w, r)
+	if err != nil {
+		generateHTML(w, nil, "layout", "public_navbar", "login")
+	} else {
+		http.Redirect(w, r, "/todos", 302)
+	}
 }
 
 func authenticate(w http.ResponseWriter, r *http.Request) {
@@ -48,14 +59,15 @@ func authenticate(w http.ResponseWriter, r *http.Request) {
 		}
 
 		cookie := http.Cookie{
-			Name: "_cookie",
-			Value: session.UUID,
+			Name:     "_cookie",
+			Value:    session.UUID,
 			HttpOnly: true,
 		}
 		http.SetCookie(w, &cookie)
 
 		http.Redirect(w, r, "/", 302)
 	} else {
+		fmt.Errorf("Invalid session")
 		http.Redirect(w, r, "/login", 302)
 	}
 }
