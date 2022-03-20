@@ -1321,3 +1321,7 @@ net/http.(*conn).serve(0x140001015e0, {0x104df4a20, 0x14000073530})
 	/usr/local/go/src/net/http/server.go:1930 +0xb6c
 created by net/http.(*Server).Serve
 	/usr/local/go/src/net/http/server.go:3034 +0x4b8
+2022/03/20 17:34:17 users.go:101: 5 values for 4 columns
+2022/03/20 17:34:17 users.go:114: sql: no rows in result set
+2022/03/20 17:58:40 users.go:101: UNIQUE constraint failed: sessions.email
+2022/03/20 18:09:02 users.go:101: UNIQUE constraint failed: sessions.email
