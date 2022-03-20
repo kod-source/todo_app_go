@@ -1325,3 +1325,4 @@ created by net/http.(*Server).Serve
 2022/03/20 17:34:17 users.go:114: sql: no rows in result set
 2022/03/20 17:58:40 users.go:101: UNIQUE constraint failed: sessions.email
 2022/03/20 18:09:02 users.go:101: UNIQUE constraint failed: sessions.email
+2022/03/20 22:43:06 users.go:86: sql: no rows in result set
