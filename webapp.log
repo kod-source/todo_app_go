@@ -1326,3 +1326,8 @@ created by net/http.(*Server).Serve
 2022/03/20 17:58:40 users.go:101: UNIQUE constraint failed: sessions.email
 2022/03/20 18:09:02 users.go:101: UNIQUE constraint failed: sessions.email
 2022/03/20 22:43:06 users.go:86: sql: no rows in result set
+2022/03/23 19:03:17 users.go:160: sql: expected 6 destination arguments in Scan, not 5
+2022/03/23 19:04:51 users.go:160: sql: expected 6 destination arguments in Scan, not 5
+2022/03/23 19:04:51 route_main.go:30: sql: expected 6 destination arguments in Scan, not 5
+2022/03/23 19:04:51 users.go:160: sql: expected 6 destination arguments in Scan, not 5
+2022/03/23 19:04:51 route_main.go:30: sql: expected 6 destination arguments in Scan, not 5
